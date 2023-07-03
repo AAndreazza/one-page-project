@@ -30,10 +30,9 @@ const Hero = () => {
             <div className='absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80' aria-hidden='true'>
             <div className='relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#000000] to-[#000000] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]'></div>
             </div>
-            <div className='mx-auto max-w-2xl py-32 sm:py-48 lg:py-56'>
-            
+            <div className='mx-auto max-w-2xl -mt-8 py-32 sm:py-48 lg:py-56'>
             <div className='text-center'>
-                <h1 className='text-4xl font-bold tracking-tight text-white sm:text-6xl'>Impulsione seu sucesso através do marketing</h1>
+                <h1 className='pr-4 pl-4 text-4xl font-bold tracking-tight text-white sm:text-6xl'>Impulsione seu sucesso através do marketing</h1>
                 <p className='mt-6 text-lg leading-8 text-gray-300'>Com estratégias de marketing inteligentes, conecte-se com seu público-alvo, construa relacionamentos duradouros e maximize seus resultados de negócios.</p>
                 <div className='mt-10 flex items-center justify-center gap-x-6'>
                 <Link to='#' className='rounded-md bg-sky-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400'>Entre em contato</Link>
