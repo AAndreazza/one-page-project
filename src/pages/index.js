@@ -7,6 +7,7 @@ const Index = () => {
     return(
         <div> 
             <Hero />
+            <About />
             
         </div>
     )
