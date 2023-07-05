@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import { CTA_WHATSAPP_MENSAGENS } from '../utils/constants'
+import { getWhatsUrl } from '../utils/index.js'
 
 const CtaButton = () => {
     return (
@@ -9,7 +11,7 @@ const CtaButton = () => {
         </div>
         <div className='mt-8 flex justify-center'>
             <Link
-            to='#'
+            to={getWhatsUrl(CTA_WHATSAPP_MENSAGENS.ctaButton)}
             className='rounded-md bg-sky-700 px-4 py-2 text-2xl font-semibold text-white shadow-sm hover:bg-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-500'
             >
             ENTRE EM CONTATO

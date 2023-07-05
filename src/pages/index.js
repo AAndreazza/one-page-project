@@ -7,10 +7,12 @@ import Depoimentos from "../components/depoimentos"
 import CtaButton from "../components/ctaButton"
 import Footer from "../components/footer"
 import Videos from "../components/videos"
+import Seo from "../components/seo"
 
 const Index = () => {
     return(
         <div> 
+            <Seo title='AzzaMarketing' description='Este é um site de marketing e foi feito com o intuito de aprendizagem.'/>
             <Hero />
             <About />
             <Videos />

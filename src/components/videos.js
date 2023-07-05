@@ -2,7 +2,7 @@ import React from "react"
 
 const Videos = () => {
     return (
-        <div class="bg-black py-24 md:py-0">
+        <div class="bg-black py-24 md:py-0" id='institucional'>
         <div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 ">
             
             <div role="list" class="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">

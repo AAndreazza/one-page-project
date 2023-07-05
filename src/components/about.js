@@ -5,7 +5,7 @@ const About = () => {
         <div className='relative isolate overflow-hidden bg-black py-24 sm:py-32'>
         <div className='mx-auto max-w-7xl px-6 lg:px-8'>
             <div className='mx-auto max-w-2xl -mt-6 lg:mx-0'>
-            <h2 className='text-4xl font-bold tracking-tight text-white sm:text-6xl'>AzzaMarketing</h2>
+            <h2 className='text-4xl font-bold tracking-tight text-white sm:text-6xl' id='empresa'>AzzaMarketing</h2>
             <p className='mt-8 text-lg leading-8 text-gray-300'>Em 2018, a AzzaMarketing foi fundada com uma visão clara: capacitar negócios para alcançar o sucesso através do poder do marketing estratégico. Com uma equipe apaixonada por criatividade e inovação, nossa empresa rapidamente se destacou no setor. Nossa história continua a ser escrita, impulsionando o sucesso dos nossos clientes e olhando sempre para o futuro.</p>
             </div>
             <div className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-6 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8'>
