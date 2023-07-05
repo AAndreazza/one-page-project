@@ -5,7 +5,7 @@ const CtaButton = () => {
     return (
         <div className='bg-sky-950 py-8' id='contato'>
         <div className='px-4 text-center sm:px-4 sm:text-center'>
-            <h3 className='text-4xl font-semibold leading-9 text-gray-200'>Ficou interessado em aumentar <br /> as vendas e visibilidade do seu negócio?</h3>
+            <h3 className='text-3xl lg:text-4xl font-semibold leading-9 text-gray-200'>Ficou interessado em aumentar <br /> as vendas e visibilidade do seu negócio?</h3>
         </div>
         <div className='mt-8 flex justify-center'>
             <Link
