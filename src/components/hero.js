@@ -1,10 +1,27 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import { CTA_WHATSAPP_MENSAGENS } from '../utils/constants'
 import { getWhatsUrl } from '../utils/index.js'
+import { graphql, useStaticQuery, Link } from 'gatsby'
+
+const HERO_QUERY = graphql`
+    query {
+        conteudo: allContentfulConteudoSite {
+        edges {
+            node {
+            fotoInicial {
+                resize(width: 5418, height: 3612) {
+                src
+                }
+            }
+            }
+        }
+        }
+    }
+`
 
 const Hero = () => {
+    const data = useStaticQuery(HERO_QUERY)
     return(
         <div className='bg-gray-900'>
         <header className='absolute inset-x-0 top-0 z-50'>
@@ -26,9 +43,10 @@ const Hero = () => {
             </div>
             </nav>
         </header>
-
+        {data.conteudo.edges.map(conteudos => {
+            return ( 
         <div className='relative isolate overflow-hidden pt-14'>
-            <StaticImage src='../images/reuniaoHero.jpg' alt='' className='absolute inset-0 -z-10 h-full w-full object-cover'/>
+            <img src={conteudos.node.fotoInicial.resize.src} alt='' className='absolute inset-0 -z-10 h-full w-full object-cover'/>
             <div className='absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80' aria-hidden='true'>
             <div className='relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#000000] to-[#000000] opacity-20 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]'></div>
             </div>
@@ -46,6 +64,8 @@ const Hero = () => {
             <div className='relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#000000] to-[#666666] opacity-20 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]'></div>
             </div>
         </div>
+        )
+    })}
         </div>
 
     )

@@ -1,10 +1,45 @@
 import React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+
+const INSTA_QUERY = graphql `
+    query {
+        conteudo: allContentfulConteudoSite {
+        edges {
+            node {
+            instaPostOne {
+                resize(width: 1842, height: 2763) {
+                src
+                }
+            }
+            instaPostTwo {
+                resize(width: 4160, height: 6240) {
+                src
+                }
+            }
+            instaPostThree {
+                resize(width: 3991, height: 5986) {
+                src
+                }
+            }
+            instaPostFour {
+                resize(height: 4000, width: 3000) {
+                src
+                }
+            }
+            }
+        }
+        }
+    }
+`
+/* <pre>{JSON.stringify(data.conteudo.edges, null, 2)}</pre> */
 
 const Instagram = () => {
+    const data = useStaticQuery(INSTA_QUERY)
     return (
         <div className='bg-black'>
+        {data.conteudo.edges.map(conteudos => {
+            return ( 
+        
         <div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8'>
             <h2 className=' text-center text-4xl font-bold tracking-tight text-white sm:text-5xl'>Acompanhe nosso Instagram</h2>
 
@@ -12,7 +47,7 @@ const Instagram = () => {
             <div className='group relative'>
                 <Link to=''>
                     <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80'>
-                    <StaticImage src='../images/post1.jpg' alt='' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
+                    <img src={conteudos.node.instaPostOne.resize.src} alt='' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
                     </div>
                 </Link>
             </div>
@@ -20,7 +55,7 @@ const Instagram = () => {
             <div className='group relative'>
                 <Link to=''>
                     <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80'>
-                    <StaticImage src='../images/post2.jpg' alt='' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
+                    <img src={conteudos.node.instaPostTwo.resize.src} alt='' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
                     </div>
                 </Link>
             </div>
@@ -28,7 +63,7 @@ const Instagram = () => {
             <div className='group relative'>
                 <Link to=''>
                     <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80'>
-                    <StaticImage src='../images/post3.jpg' alt='' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
+                    <img src={conteudos.node.instaPostThree.resize.src} alt='' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
                     </div>
                 </Link>
             </div>
@@ -36,12 +71,14 @@ const Instagram = () => {
             <div className='group relative'>
                 <Link to=''>
                     <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80'>
-                    <StaticImage src='../images/post4.jpg' alt='' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
+                    <img src={conteudos.node.instaPostFour.resize.src} alt='' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
                     </div>
                 </Link>
             </div>
             </div>
         </div>
+        )
+    })}
         </div>
     )
 }
