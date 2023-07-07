@@ -5,11 +5,13 @@ import { URLS } from '../utils/constants'
 
 const Footer = () => {
     return(
-        <footer className='bg-black' aria-labelledby='footer-heading'>
-        <h2 id='footer-heading' className='sr-only'>Footer</h2>
-        <div className='mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-18 lg:px-8 lg:pt-20'>
-            <div className='xl:grid xl:grid-cols-3 xl:gap-8'>
-            <div className='space-y-8'>
+        <footer class="bg-black" aria-labelledby="footer-heading">
+        <h2 id="footer-heading" class="sr-only">Footer</h2>
+        <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-20">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+            <div class="grid grid-cols-2 gap-8 xl:col-span-2">
+                <div class="md:gap-8">
+                <div className='space-y-8'>
                 <Link to='/'>
                 <span className='sr-only'>AzzaMarketing</span>
                 <StaticImage className='h-12 w-12 rounded-full' src='../images/logo.png' alt='logo'/>
@@ -41,11 +43,28 @@ const Footer = () => {
                     </svg>
                 </Link>
                 </div>
+                </div>
+                
+                </div> 
             </div>
+            <div class="mt-10 xl:mt-0">
+                <h3 class="text-sm font-semibold leading-6 text-gray-400">Inscreva-se na nossa newsletter</h3>
+                <p class="mt-2 text-sm leading-6 text-gray-500">As últimas notícias, artigos e recursos enviados para sua caixa de entrada semanalmente.</p>
+                <form action="https://formsubmit.co/alanaandreazza26@gmail.com" method="POST" class="mt-6 sm:flex sm:max-w-md">
+                    <input type="hidden" name="_next" value="http://localhost:8000"/>
+                    {/* Tirar captcha: */} <input type="hidden" name="_captcha" value="false"/>
+                    <label for="email-address" class="sr-only">Email</label>
+                    <input type="email" name="email-address" id="email-address" autocomplete="email" required class="w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-700 sm:w-64 sm:text-sm sm:leading-6 xl:w-full" placeholder="Digite seu email"/>
+                    <div class="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
+                        <button type="submit" class="flex w-full items-center justify-center rounded-md bg-sky-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Subscribe</button>
+                    </div>
+                </form>
             </div>
             <div className='mt-2 border-t border-gray-900/10 pt-4 sm:mt-2 lg:mt-2'>
             <p className='text-xs leading-5 text-gray-500'>&copy; Site feito para aprendizado.</p>
             </div>
+            </div>
+            
         </div>
         </footer>
 
