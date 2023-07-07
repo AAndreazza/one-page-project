@@ -1,12 +1,37 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+
+const SERVICOS_QUERY = graphql`
+    query {
+        conteudo: allContentfulConteudoSite {
+        edges {
+            node {
+            tituloServico1
+            conteudoServico1
+            tituloServico2
+            conteudoServico2
+            tituloServico3
+            conteudoServico3
+            nomeAzza
+            historiaAzza {
+                historiaAzza
+                }
+            }
+        }
+        }
+    }
+`
 
 const About = () => {
+    const data = useStaticQuery(SERVICOS_QUERY)
     return (
         <div className='relative isolate overflow-hidden bg-black py-24 sm:py-32'>
-        <div className='mx-auto max-w-7xl px-6 lg:px-8'>
+            {data.conteudo.edges.map(conteudos => {
+                return (
+        <div className='mx-auto max-w-7xl px-6 lg:px-8'> 
             <div className='mx-auto max-w-2xl -mt-6 lg:mx-0'>
-            <h2 className='text-4xl font-bold tracking-tight text-white sm:text-6xl' id='empresa'>AzzaMarketing</h2>
-            <p className='mt-8 text-lg leading-8 text-gray-300'>Em 2018, a AzzaMarketing foi fundada com uma visão clara: capacitar negócios para alcançar o sucesso através do poder do marketing estratégico. Com uma equipe apaixonada por criatividade e inovação, nossa empresa rapidamente se destacou no setor. Nossa história continua a ser escrita, impulsionando o sucesso dos nossos clientes e olhando sempre para o futuro.</p>
+            <h2 className='text-4xl font-bold tracking-tight text-white sm:text-6xl' id='empresa'>{conteudos.node.nomeAzza}</h2>
+            <p className='mt-8 text-lg leading-8 text-gray-300'>{conteudos.node.historiaAzza.historiaAzza}</p>
             </div>
             <div className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-6 sm:mt-12 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8'>
             <div className='flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-white/10'>
@@ -14,8 +39,8 @@ const About = () => {
                 <path fill-rule="evenodd" d="M7.84 1.804A1 1 0 018.82 1h2.36a1 1 0 01.98.804l.331 1.652a6.993 6.993 0 011.929 1.115l1.598-.54a1 1 0 011.186.447l1.18 2.044a1 1 0 01-.205 1.251l-1.267 1.113a7.047 7.047 0 010 2.228l1.267 1.113a1 1 0 01.206 1.25l-1.18 2.045a1 1 0 01-1.187.447l-1.598-.54a6.993 6.993 0 01-1.929 1.115l-.33 1.652a1 1 0 01-.98.804H8.82a1 1 0 01-.98-.804l-.331-1.652a6.993 6.993 0 01-1.929-1.115l-1.598.54a1 1 0 01-1.186-.447l-1.18-2.044a1 1 0 01.205-1.251l1.267-1.114a7.05 7.05 0 010-2.227L1.821 7.773a1 1 0 01-.206-1.25l1.18-2.045a1 1 0 011.187-.447l1.598.54A6.993 6.993 0 017.51 3.456l.33-1.652zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
                 </svg>
                 <div className='text-base leading-7'>
-                <h3 className='font-semibold text-white'>Branding</h3>
-                <p className='mt-2 text-gray-300'>Construção estratégica de identidade, conexão emocional e diferenciação competitiva da marca.</p>
+                <h3 className='font-semibold text-white'>{conteudos.node.tituloServico1}</h3>
+                <p className='mt-2 text-gray-300'>{conteudos.node.conteudoServico1}</p>
                 </div>
             </div>
             <div className='flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-white/10'>
@@ -24,8 +49,8 @@ const About = () => {
                 <path d='M16.5 6.5h-1v8.75a1.25 1.25 0 102.5 0V8a1.5 1.5 0 00-1.5-1.5z' />
                 </svg>
                 <div className='text-base leading-7'>
-                <h3 className='font-semibold text-white'>Publicidade e Propaganda</h3>
-                <p className='mt-2 text-gray-300'>Criação de mensagens impactantes e criativas, usando os canais adequados para atingir o público-alvo desejado.</p>
+                <h3 className='font-semibold text-white'>{conteudos.node.tituloServico2}</h3>
+                <p className='mt-2 text-gray-300'>{conteudos.node.conteudoServico2}</p>
                 </div>
             </div>
             <div className='flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-inset ring-white/10'>
@@ -33,12 +58,14 @@ const About = () => {
                 <path fill-rule="evenodd" d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z" clip-rule="evenodd" />
                 </svg>
                 <div className='text-base leading-7'>
-                <h3 className='font-semibold text-white'>Criação de sites</h3>
-                <p className='mt-2 text-gray-300'>Design, programação e usabilidade para presença online eficaz.</p>
+                <h3 className='font-semibold text-white'>{conteudos.node.tituloServico3}</h3>
+                <p className='mt-2 text-gray-300'>{conteudos.node.conteudoServico3}</p>
                 </div>
             </div>
             </div>
         </div>
+        )
+    })}
         </div>
     )
 }
