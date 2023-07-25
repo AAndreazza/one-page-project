@@ -31,7 +31,6 @@ const INSTA_QUERY = graphql `
         }
     }
 `
-/* <pre>{JSON.stringify(data.conteudo.edges, null, 2)}</pre> */
 
 const Instagram = () => {
     const data = useStaticQuery(INSTA_QUERY)
