@@ -1,8 +1,8 @@
 import React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
 import { CTA_WHATSAPP_MENSAGENS } from '../utils/constants'
 import { getWhatsUrl } from '../utils/index.js'
 import { graphql, useStaticQuery, Link } from 'gatsby'
+import Logo from '../images/logo.png'
 
 const HERO_QUERY = graphql`
     query {
@@ -29,7 +29,7 @@ const Hero = () => {
             <div className='flex lg:flex-1'>
                 <Link to='/' className='-m-1.5 p-1.5'>
                 <span className='sr-only'>AzzaMarketing</span>
-                <StaticImage className='h-12 w-12 rounded-full' src='../images/logo.png' alt='logo'/>
+                <img className='h-12 w-12 rounded-full' src={Logo} alt='logo'/>
                 </Link>
             </div>
 

@@ -47,7 +47,7 @@ const Instagram = () => {
             <div className='group relative'>
                 <Link to=''>
                     <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80'>
-                    <img src={conteudos.node.instaPostOne.resize.src} alt='' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
+                    <img src={conteudos.node.instaPostOne.resize.src} alt='cartas espalhadas na mão' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
                     </div>
                 </Link>
             </div>
@@ -55,7 +55,7 @@ const Instagram = () => {
             <div className='group relative'>
                 <Link to=''>
                     <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80'>
-                    <img src={conteudos.node.instaPostTwo.resize.src} alt='' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
+                    <img src={conteudos.node.instaPostTwo.resize.src} alt='braço masculino no bolso da calça com um relógio no punho' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
                     </div>
                 </Link>
             </div>
@@ -63,7 +63,7 @@ const Instagram = () => {
             <div className='group relative'>
                 <Link to=''>
                     <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80'>
-                    <img src={conteudos.node.instaPostThree.resize.src} alt='' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
+                    <img src={conteudos.node.instaPostThree.resize.src} alt='duas mulheres com seus computadores rindo' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
                     </div>
                 </Link>
             </div>
@@ -71,7 +71,7 @@ const Instagram = () => {
             <div className='group relative'>
                 <Link to=''>
                     <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80'>
-                    <img src={conteudos.node.instaPostFour.resize.src} alt='' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
+                    <img src={conteudos.node.instaPostFour.resize.src} alt='xícara preta com vista para mar azulado e montanhas' className='h-full w-full object-cover object-center lg:h-full lg:w-full'/>
                     </div>
                 </Link>
             </div>

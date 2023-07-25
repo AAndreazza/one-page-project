@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { StaticImage } from 'gatsby-plugin-image'
 import { URLS } from '../utils/constants'
+import Logo from '../images/logo.png'
 
 const Footer = () => {
     return(
@@ -14,7 +14,7 @@ const Footer = () => {
                 <div className='space-y-8'>
                 <Link to='/'>
                 <span className='sr-only'>AzzaMarketing</span>
-                <StaticImage className='h-12 w-12 rounded-full' src='../images/logo.png' alt='logo'/>
+                <img className='h-12 w-12 rounded-full' src={Logo} alt='logo'/>
                 </Link>
                 <p className='text-sm leading-6 text-gray-600'>Impulsione seu sucesso através do marketing!</p>
                 <div className='flex space-x-6'>
